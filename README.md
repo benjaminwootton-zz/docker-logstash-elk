@@ -16,3 +16,12 @@ Build and run the docker image:
     git clone http://github.com/benjaminwootton/docker-elk-example.git
     docker build .
     docker run -p 9200:9200 -p 9292:9292 -p 5000:5000 <image id>
+
+
+# To publish to Logstash via RSYSLOG
+
+    sudo su - root
+    vim /etc/rsyslog.conf 
+    # Log Messages Over UDP                          
+    *.* @192.168.1.92:514                            
+                           
